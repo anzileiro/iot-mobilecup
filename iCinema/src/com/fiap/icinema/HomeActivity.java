@@ -31,4 +31,5 @@ public class HomeActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
 }
