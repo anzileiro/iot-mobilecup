@@ -3,6 +3,7 @@ package com.fiap.icinema;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,13 +14,19 @@ import android.widget.Toast;
 public class LoginActivity extends ActionBarActivity {
 
 	private EditText txtTicket;
+	private ServiceAPI se;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-
+		se = new ServiceAPI((AudioManager)getSystemService(AUDIO_SERVICE));		
+		
+		se.resolverLuz(this);			
+			
 		txtTicket = (EditText) findViewById(R.id.txtTicket);
+		
+		
 	}
 
 	@Override
@@ -42,21 +49,17 @@ public class LoginActivity extends ActionBarActivity {
 	}
 
 	public void validarTicket(View v) {
-		if (txtTicket.getText().toString().equalsIgnoreCase("t35t3")) {
-			// Toast.makeText(getApplicationContext(), "Ticket válido",
-			// Toast.LENGTH_SHORT).show();
-			ServiceAPI a = new ServiceAPI();
-			a.obterJson(getApplicationContext());
-			//iniciarIntent(getApplicationContext(), HomeActivity.class);
+		if (txtTicket.getText().toString().equalsIgnoreCase("a")) {
+			Intent i = new Intent(this, PedidoActivity.class);
+			startActivity(i);
 		} else {
-			Toast.makeText(getApplicationContext(), "Ticket inválido",
+			Toast.makeText(this, "Ticket inválido",
 					Toast.LENGTH_SHORT).show();
 		}
 	}
 
-	private void iniciarIntent(Context contexto, Class<?> classe) {
-		Intent i = new Intent(contexto, classe);
-		startActivity(i);
-	}
+	
+	
+	
 
 }

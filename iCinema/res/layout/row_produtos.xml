@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rowProdutos"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <ImageView android:id="@+id/imgProduto"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+    
+    <TextView android:id="@+id/txtProdutoNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgProduto"/>
+    
+    <TextView android:id="@+id/txtProdutoPreco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgProduto"
+        android:layout_below="@id/txtProdutoNome"/>
+    
+    <TextView android:id="@+id/txtProdutoSubTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgProduto"
+        android:layout_below="@id/txtProdutoPreco"/>
+    
+    <EditText android:id="@+id/edtProdutoQuantidade"
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:inputType="number"
+        android:layout_alignParentRight="true" />
+    
+</RelativeLayout>
