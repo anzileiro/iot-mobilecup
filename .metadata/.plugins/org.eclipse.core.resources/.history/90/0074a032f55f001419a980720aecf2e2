@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".PedidoActivity" >
+	
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/lstProduto">        
+    	<ListView
+        android:id="@id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </RelativeLayout>
+    
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/lstProduto"
+        android:orientation="vertical"
+        android:layout_weight="0.3">
+    	<LinearLayout android:layout_width="match_parent"
+    	    android:layout_height="0dp"
+    	    android:layout_weight="0.8"
+    	    android:orientation="vertical">
+       	    <RadioGroup android:orientation="horizontal"
+       	        android:id="@+id/rgrFormaPagamento"
+       	        android:layout_width="wrap_content"
+       	        android:layout_height="wrap_content">
+       	        <RadioButton android:layout_width="wrap_content"
+       	            android:layout_height="wrap_content"
+       	            android:text="Cartão"
+       	            android:id="@+id/rbuCartao"/>
+       	        
+       	        <RadioButton android:layout_width="wrap_content"
+       	            android:layout_height="wrap_content"
+       	            android:text="Dinheiro"
+       	            android:id="@+id/rbuDinheiro"/>
+       	    </RadioGroup>
+       	    
+       	    <LinearLayout
+       	        android:id="@+id/layTrocoPara"
+       	        android:layout_width="match_parent"
+       	        android:layout_height="wrap_content"
+       	        android:layout_weight="0.2"
+       	        android:orientation="horizontal" >
+
+       	        <TextView
+       	            android:layout_width="wrap_content"
+       	            android:layout_height="wrap_content"
+       	            android:text="Troco para" />
+       	        
+       	        <EditText android:layout_width="50dp"
+       	            android:layout_height="wrap_content"
+       	            android:inputType="number"
+       	            android:id="@+id/eteTrocoPara"/>
+       	    </LinearLayout>
+    	</LinearLayout>
+
+    	<RelativeLayout
+    	    android:layout_width="match_parent"
+    	    android:layout_height="0dp"
+    	    android:layout_weight="0.2" >
+
+    	    <TextView
+    	        android:id="@+id/txtTotal"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignParentLeft="true"
+    	        android:layout_centerVertical="true"
+    	        android:layout_marginLeft="25dp"
+    	        android:gravity="bottom|left"
+    	        android:text="dasdsa" />
+
+    	    <Button
+    	        android:id="@+id/button1"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignParentBottom="true"
+    	        android:layout_alignParentRight="true"
+    	        android:layout_marginRight="39dp"
+    	        android:onClick="enviar"
+    	        android:text="Enviar" />
+
+    	</RelativeLayout>
+    	
+    </LinearLayout>
+</RelativeLayout>
